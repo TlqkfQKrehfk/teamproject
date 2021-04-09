@@ -1,6 +1,5 @@
 package com.example.teamproject.order;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,11 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
 import org.hibernate.annotations.ColumnDefault;
-
-import com.example.teamproject.event.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,6 +38,7 @@ public class PurchaseOrder {
 	@ColumnDefault("'00'")
 	private String orderState; // 주문 상태
 
-	@OneToOne // 영속성 전이로 저장
-	private Product product;
+	@OneToMany(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "purchaseOrderId")
+	private List<PurchaseOrderDetail> purchaseOrderDetails;
 }

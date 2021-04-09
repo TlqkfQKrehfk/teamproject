@@ -2,12 +2,12 @@ server:
   port: 8080
 
 
-# nohup java -jar -Dspring.profiles.active=prod myworkspace-0.0.1-SNAPSHOT.jar > myworkspace.log &
+# nohup java -jar -Dspring.profiles.active=prod teamproject-0.0.1-SNAPSHOT.jar > teamproject.log &
 
 spring:
   application:
     # 서비스 이름
-    name: PDH
+    name: order
   profiles:
     active: default
   servlet:
@@ -58,7 +58,7 @@ eureka:
   client:
     service-url:
       # 유레카의 ec2 주소
-      default-zone: http://ec2-15-164-220-206.ap-northeast-2.compute.amazonaws.com:8761/eureka
+      defaultZone: http://3.36.90.155:8761/eureka/
   instance:
     # 본인 서비스의 ec2 주소 서비스가 실행되는 ec2주소
-    hostname: ec2-13-125-208-32.ap-northeast-2.compute.amazonaws.com
+    hostname: 13.125.208.32 
