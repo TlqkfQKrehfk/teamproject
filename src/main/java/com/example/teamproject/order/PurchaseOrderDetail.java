@@ -23,13 +23,11 @@ public class PurchaseOrderDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private Long salesOrderId; // nullable
-	private long price;
-	private long quantity;
-//	private String pay; // 결제 방법
-//	private String note; // 요청사항
+	private Long salesOrderId;
 
 	@ManyToOne
 	@JoinColumn(name = "productId")
 	private Product product;
+	private long price;
+	private long quantity;
 }
