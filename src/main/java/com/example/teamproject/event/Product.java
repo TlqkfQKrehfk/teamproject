@@ -31,6 +31,7 @@ public class Product {
 	private String category;
 	private String reDate;
 	private long stock;
+	private String code;
 
 	@OneToMany
 	@JoinColumn(name = "productId")

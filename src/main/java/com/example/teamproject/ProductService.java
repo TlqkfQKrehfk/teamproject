@@ -28,8 +28,7 @@ public class ProductService {
 	public void receiveBill(Product product) {
 		Product products = Product.builder().productName(product.getProductName()).description(product.getDescription())
 				.price(product.getPrice()).category(product.getCategory()).reDate(product.getReDate())
-				.stock(product.getStock()).build();
-
+				.stock(product.getStock()).code(product.getCode()).build();
 		System.out.println(products);
 		productRepo.save(products);
 		System.out.println("--Proudct--");

@@ -33,12 +33,18 @@ public class PurchaseOrder {
 	private String orderDate; // 주문일
 	private String pay; // 결제 방법
 	private String note; // 요청사항
+	private String description;
+	private Long salesOrderId;
+	private String productName;
+	private String code;
+	private String category;
 
 	@Column(columnDefinition = "CHAR(2)")
 	@ColumnDefault("'00'")
 	private String orderState; // 주문 상태
+	private long price;
 
-	@OneToMany(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "purchaseOrderId")
-	private List<PurchaseOrderDetail> purchaseOrderDetails;
+//	@OneToMany(cascade = CascadeType.PERSIST)
+//	@JoinColumn(name = "purchaseOrderId")
+//	private List<PurchaseOrderDetail> purchaseOrderDetails;
 }

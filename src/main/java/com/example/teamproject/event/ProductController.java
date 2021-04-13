@@ -43,34 +43,15 @@ public class ProductController {
 		return list;
 	}
 
-	// 1건 추가
-//	@RequestMapping(value = "/products", method = RequestMethod.POST)
-//	public Product addProduct(@RequestBody Product product) {
-//		productRepo.save(product);
-//		return product;
-//	}
-
-//	// 1건 조회
-//	// @GetMapping(value="/products/{id}")
-//	// feed 1건 조회
-//	// GET /feeds/{id}
-//	// return 객체는 Feed 1개
-//	@RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-//	public @ResponseBody Product getProduct(@PathVariable("id") long id, HttpServletResponse res) {
-//		if (productRepo.findById(id).orElse(null) == null) {
-//			res.setStatus(HttpServletResponse.SC_NOT_FOUND);
-//		}
-//		return null;
-//	}
 	@GetMapping(value = "/products/{id}")
 	public Product getProductsById(@PathVariable("id") long id, HttpServletResponse res) {
 		if (productRepo.findById(id).orElse(null) == null) {
 			res.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return null;
 		}
-		Product product = productRepo.findById(id).orElse(null);
+		Product products = productRepo.findById(id).orElse(null);
 
-		return product;
+		return products;
 
 	}
 
