@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8085
 
 
 # nohup java -jar -Dspring.profiles.active=prod teamproject-0.0.1-SNAPSHOT.jar > teamproject.log &
