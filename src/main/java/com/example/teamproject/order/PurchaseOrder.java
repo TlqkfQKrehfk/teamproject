@@ -33,7 +33,7 @@ public class PurchaseOrder {
 	private String orderDate; // 주문일
 	private String pay; // 결제 방법
 	private String note; // 요청사항
-	private String description;
+	private String description; // 상품설명
 	private Long salesOrderId;
 	private String productName;
 	private String code;
